@@ -1,22 +1,31 @@
-import { useState } from 'preact/hooks'
-import preactLogo from './assets/preact.svg'
-import viteLogo from '/vite.svg'
+import {Route, Routes} from 'react-router' ;
+import  HomePage  from './pages/HomePage';
+import  LoginPage  from './pages/LoginPage';
+import  ChatPage  from './pages/ChatPage';
+import SignUpPage from './pages/SignUpPage';
+ import CallPage from './pages/CallPage';  
+import NotificationPage from './pages/NotificationPage';
+import  OnboardingPage  from './pages/OnboardingPage';
 import './app.css'
+
 
 export function App() {
 
 
   return (
-    <>
-<button className="btn btn-active">Default</button>
-<button className="btn btn-active btn-primary">Primary</button>
-<button className="btn btn-active btn-secondary">Secondary</button>
-<button className="btn btn-active btn-accent">Accent</button>
-<button className="btn btn-active btn-info">Info</button>
-<button className="btn btn-active btn-success">Success</button>
-<button className="btn btn-active btn-warning">Warning</button>
-<button className="btn btn-active btn-error">Error</button>
-     
-    </>
+  <div  className="h-screen">
+
+        <Routes>
+
+        <Route path="/" element={<HomePage />} />
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/signup" element={<SignUpPage />} />
+        <Route path="/notification" element={<NotificationPage />} />
+        <Route path="/call" element={<CallPage/>} />
+        <Route path="/chat" element={<ChatPage />} />
+        <Route path="/Onboarding" element={<OnboardingPage />} />
+
+        </Routes>
+      </div>
   )
 }
